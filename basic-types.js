@@ -62,3 +62,44 @@ console.log('The number of episodes per season is' + perSeason);
 
 console.log (2 ** 6 + 'bits');
 console.log (20 % 6);
+
+var bigIntNum = BigInt(Number.MAX_SAFE_INTEGER)
+console.log(bigIntNum);
+
+var aLargeNumber = 19_23_34_45_56_67_78_899n;
+
+console.log(aLargeNumber + 1n);
+
+
+var user = 'Pia';
+var desgination = 'Desginer';
+var organization = 'zzz \u{2122}';
+var city = 'Menosova';
+var country = 'pinya';
+var location = city + ', ' + country;
+var favQuote = 'To \' single-quote\' or "double-quote"';
+
+var empolyeeData = `Name: ${user}
+Desgination: ${desgination}
+Organization: ${organization}
+Location:${location}
+                    
+`;
+
+var greeting = `Hi my name is ${user} i am working at ${organization} as a ${desgination}`;
+
+console.log(empolyeeData);
+
+console.log(greeting);
+
+var showReport = true;
+var hasDownloaded = false;
+var PaymentConfirmed = true;
+var forceDelete = false;
+var message = 'hey';
+var showPostButton = !!message;
+console.log(`Show Post Button: ${showPostButton}`);
+
+var numOfCharacters = message.length;
+var showEditButton = !!numOfCharacters;
+console.log(`Show Edit Button: ${showEditButton}`);
