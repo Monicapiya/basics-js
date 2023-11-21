@@ -34,3 +34,31 @@ console.log(function1, typeof function1);
 
 const nullValue = null;
 console.log(nullValue, typeof nullValue);
+
+
+let a = 'Hello';
+let b = 3;
+
+console.log(a+b);
+
+var blub = 4;
+
+console.log(blub);
+
+var pi = 3.1415;
+console.log('The value of the PI is', pi);
+
+var costOfBubbleTea = 23;
+var discount = 0.5;
+var tax = 2;
+var quantity = 5;
+var total = (costOfBubbleTea + tax -discount) * 5;
+console.log('The total cost of Bubble Tea is Rs:' + total);
+
+var numOfEpisodes = 36;
+var perSeason = 22/2;
+
+console.log('The number of episodes per season is' + perSeason);
+
+console.log (2 ** 6 + 'bits');
+console.log (20 % 6);
