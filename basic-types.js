@@ -103,3 +103,15 @@ console.log(`Show Post Button: ${showPostButton}`);
 var numOfCharacters = message.length;
 var showEditButton = !!numOfCharacters;
 console.log(`Show Edit Button: ${showEditButton}`);
+
+var movies = {
+  bestMovie: 'zzzeee',
+  releaseYear: 2021,
+  worstMovie: 'mpune',
+  isflop: true,
+
+
+};
+
+console.log(movies.bestMovie);
+
