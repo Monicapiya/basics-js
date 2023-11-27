@@ -99,3 +99,21 @@ formula = Area of a circle = πr. The perimeter of a circle = 2πr
 
   console.log(circleValues(35));
 
+/*
+  Count number of Vowels in String
+Function `countVowel()` returns the number of vowels in input string. Learn more about JavaScript String methods from javatpoint.com/javascript-string.
+*/
+
+function countVowel(words) {
+  let count = 0;
+  words=words.toLowerCase();
+  for(let i=0;i<words.length;i++){
+    if(words.charAt(i)=="a"||words.charAt(i)=="e"||words.charAt(i)=="i"||
+    words.charAt(i)=="o"||words.charAt(i)=="u"){
+       count++; //Increment vowel count
+    }
+  }
+  return count;
+}
+
+console.log(countVowel(Mahi));
