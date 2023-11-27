@@ -1,27 +1,23 @@
-  /*
-
-the Conditional (Ternary) Operator
-1. If your country's population is greater than 33 million, use the ternary operator 
-to log a string like this to the console: 'Portugal's population is above average'. 
-Otherwise, simply log 'Portugal's population is below average'. Notice how only
-one word changes between these two sentences!
-2. After checking the result, change the population temporarily to 13 and then to 
-130. See the different results, and set the population back to original
-  
-  */
-
-  /*
-
-let population = 33000000;
-let countryPopulation = 3;
-
-if(population >= countryPopulation){
-  console.log("Portugal's population is above average");
-} else if (population <= countryPopulation) {
-  console.log(`Portugal's population is below average`);
+function greetings(){
+  console.log('Good Morning');
 }
 
-*/
+greetings(); //calling / running / invoking the function 
+
+function fruitProcessor(apples, oranges) {
+  const juice = `Juice with ${apples} apples and ${oranges} oranges`
+  
+  return juice;
+}
+
+const appleJuice = fruitProcessor(5,2);
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitProcessor(1,9);
+console.log(appleOrangeJuice); 
+
+
+
 
 // Arrow Function 👇
 
@@ -61,4 +57,24 @@ const age2 = calAge2(1991);
 
 console.log(age2, age1);
 
+
+//Functions calling other fucntions 👇
+
+const cutPieces = function(fruit) {    //we are creating a function that can be used to cut the fruit into the smaller pieces, in place of we can as number of pieces as we required such as 4, 6 etc.... 
+  return fruit * 4;
+}
+
+
+
+function fruitProcessor1(apples, oranges) {
+
+  const applePieces = cutPieces(apples);
+  const orangePieces = cutPieces(oranges); //calling cutPieces function
+
+  const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges`
+  
+  return juice;
+}
+
+console.log(fruitProcessor1(2,3));
 
