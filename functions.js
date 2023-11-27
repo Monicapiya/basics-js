@@ -41,4 +41,24 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 console.log(yearsUntilRetirement(1991, 'Jonas'));
 console.log(yearsUntilRetirement(1981, 'Bob'));
 
+//Function declaration 👇
+
+function calAgel(birthyear) {
+  return 2037 - birthyear;
+}
+
+const age1 = calAgel(1991);
+
+console.log(age1);
+
+//Function expression 👇
+
+const calAge2 = function(birthyear) {
+  return 2039 - birthyear;
+}
+
+const age2 = calAge2(1991);
+
+console.log(age2, age1);
+
 
