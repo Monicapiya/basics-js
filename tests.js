@@ -43,3 +43,33 @@ language = 'Tamil';
 console.log(language);
 
  */
+
+
+/*
+Write a function that returns the square of a number
+Function `findSquare()` returns the square of the input number which is passed as an argument in the function call.
+
+*/
+
+function findSquare(num){
+  return num * num
+}
+
+console.log(findSquare(5));
+
+/*
+Write a function to convert Celsius to Fahrenheit
+Function `calFahrenheit()` returns the converted Celsius value to Fahrenheit value based on the formula `(Celsius × 9/5) + 32 = Fahrenheit`
+
+formula C to F 👇
+
+°F = °C × (9/5) + 32
+*/
+
+let Celsius = 52;
+
+function calFahrenheit() {
+  return Celsius * (9/5) + 32;
+}
+
+console.log(calFahrenheit());
