@@ -139,5 +139,3 @@ function checkWinner(scoreDolphins, scoreKoalas){
 
 checkWinner();
 
-
-/

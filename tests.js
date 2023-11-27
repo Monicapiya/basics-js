@@ -73,3 +73,15 @@ function calFahrenheit() {
 }
 
 console.log(calFahrenheit());
+
+
+/*
+ Write a function to find the area of a given Rectangle
+Function `rectangleArea()` returns the rectangle area provided the width and height as the argument.
+*/
+
+function rectangleArea(a, b){
+  return `area of recangle is ${a * b}`
+}
+
+console.log(rectangleArea(23,45));
