@@ -85,3 +85,17 @@ function rectangleArea(a, b){
 }
 
 console.log(rectangleArea(23,45));
+
+/*
+Write a function to find the area and perimeter of a Circle
+Function `circleValues()` returns the perimeter and area of the circle provided the radius as an argument for the function call.
+
+formula = Area of a circle = πr. The perimeter of a circle = 2πr
+*/
+
+  function circleValues(radiusValue) {
+    return `Perimeter: ${2*Math.PI*radiusValue}, Area: ${Math.PI*radiusValue*radiusValue}`;
+  }
+
+  console.log(circleValues(35));
+
