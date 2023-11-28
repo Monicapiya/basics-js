@@ -64,7 +64,7 @@ if(friends.includes('Kia')){
 }
 
 
-const calcTip = function(bill){
+function calcTip(bill){
   // return bill >= 50 && bill <=300 ? bill * 15/100 : bill * 20/100;
   
   return bill >= 50 && bill <=300 ? bill * 0.15 : bill * 0.2;
