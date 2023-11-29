@@ -47,10 +47,24 @@ const jonas = {
   birthYear: 1990,
   job:'Desginer',
   hasDriverLicense:true,
+  /* 
 
   calAge: function(birthYear){
-    return 2035 - birthYear; // only function expression works here, function declration doesnt work
+   return 2035 - birthYear; // only function expression works here, function declration doesnt work
   }
+  calAge:function(){
+    return 2037 = this.birthYear
+  }
+*/
+
+calAge:function(){
+  this.age = 2037 - this.birthYear
+  return this.age;
 }
 
-console.log(jonas.calAge(1990));
+}
+
+// console.log(jonas.calAge(1990));
+
+console.log(jonas.calAge());
+ 
