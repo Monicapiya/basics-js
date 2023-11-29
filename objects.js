@@ -40,3 +40,17 @@ console.log(joe);
 //Jonas has 3 frinds and his best friend is called Kam
 
 console.log(`${joe.firstName} has ${joe.collegues.length} friends, and he is close with collegue called ${joe.collegues[0]}` );
+
+const jonas = {
+  firstName:'Jonas',
+  lastName:'Miche',
+  birthYear: 1990,
+  job:'Desginer',
+  hasDriverLicense:true,
+
+  calAge: function(birthYear){
+    return 2035 - birthYear; // only function expression works here, function declration doesnt work
+  }
+}
+
+console.log(jonas.calAge(1990));
