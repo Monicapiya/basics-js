@@ -49,3 +49,25 @@ for(let i = 0; i < joeArray.length; i++) {
 
   console.log(joeArray[i] , typeof joeArray[i] );
 }
+
+
+const joe = [
+  'Joe',
+  'Narnia',
+  2037 - 1992,
+  'teacher',
+  ['Jaine', 'Pete', 'Kam'],
+  true
+];
+
+for (let i = joe.length - 1; i>= 0; i--){
+  console.log(i, joe[i]);
+}
+
+for(let exercise = 1; exercise < 4; exercise++){
+  console.log(`----Starting exercise${exercise}`);
+}
+
+for(let rep = 1; rep < 6; rep++){
+  console.log(`Exercise ${exercise}: Lifiting weight reptetation ${rep}`);
+}
