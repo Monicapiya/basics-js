@@ -56,6 +56,19 @@ console.log(friends1.indexOf('Eea'));
 // includes  method  🌟
 console.log(friends1.includes('Eea'));
 
+// reduce method
+
+const arrayNum = [2, 3, 4, 9, 10];
+const num = arrayNum.reduce((accumulator, currentValue) => {
+return accumulator + currentValue; }, 0);
+
+const Avg = num / arrayNum.length;
+
+console.log(Avg);
+
+// Array.map() method
+
+
 
 if(friends.includes('Kia')){
   console.log('You have a friend called Kia');
