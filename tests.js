@@ -133,23 +133,65 @@ console.log(area);
 /*
 Question 1
 Prompt: Write a JavaScript function that filters out strings from an array. For example, given ['hello', 5, 'world', 10], it should return [5, 10].
-Test Cases:
-['apple', 34, 'banana', 45] ➔ [34, 45]
-[1, '2', 3, '4'] ➔ [1, 3]
-['one', 'two', 3, 4] ➔ [3, 4]
 
 
 */
 
-const apla = ['hello', 5, 'world', 10]
-function onlyNumbers(array) {
+const execuleWords = ['hello', 5, 'world', 10];
+function onlyNumbers(words) {
   let result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] !== 'string') {
-      result.push(array[i]);
+  for (let i = 0; i < words.length; i++) {
+    if (typeof words[i] !== 'string') {
+      result.push(words[i]);
     }
   }
   return result;
 }
 
-console.log(onlyNumbers(apla));
+console.log(onlyNumbers(execuleWords));
+
+
+/*
+Question 2
+Prompt: Create a function that returns the sum of all numbers in an array, ignoring non-numeric values. For example, ['1', 2, 'three', 4] should return 6.
+*/
+
+const totalNum = ['1', 2, 'three', 4];
+function sumNumbers(NUMBER) {
+  let sum = 0;
+  for (let i = 0; i < NUMBER.length; i++) {
+    if (typeof NUMBER[i] === 'number') {
+      sum += NUMBER[i];
+    }
+  }
+  return sum;
+}
+
+console.log(sumNumbers(totalNum))
+
+
+/*
+Question 3
+Write a JavaScript function to calculate the average age of all female persons in an array of objects. Example array: [{name: 'Alice', age: 30, gender: 'female'}, {name: 'Bob', age: 25, gender: 'male'}].
+
+*/
+
+const totalPeople = [{name: 'Alice', age: 30, gender: 'female'}, 
+                  {name: 'Bob', age: 25, gender: 'male'},
+                 {name: 'Jane', age: 20, gender: 'female'}, 
+                  {name: 'Mike', age: 22, gender: 'male'}, 
+                  {name: 'Lisa', age: 24, gender: 'female'},
+                  {name: 'Emma', age: 35, gender: 'female'}, 
+                  {name: 'John', age: 40, gender: 'male'},
+                 ];
+function calAvgAge(people) {
+  let femalePersons = [];
+  people.forEach(person => {
+    if (person.gender === 'female') {
+      femalePersons.push(person);
+    }
+  });
+  let sum = femalePersons.reduce((total, person) => total + person.age, 0);
+  return sum / femalePersons.length;
+}
+console.log(calAvgAge(totalPeople));
