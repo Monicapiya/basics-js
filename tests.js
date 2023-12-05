@@ -128,3 +128,28 @@ let s = side1+side2+side3 /2;
 const area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
 
 console.log(area);
+
+
+/*
+Question 1
+Prompt: Write a JavaScript function that filters out strings from an array. For example, given ['hello', 5, 'world', 10], it should return [5, 10].
+Test Cases:
+['apple', 34, 'banana', 45] ➔ [34, 45]
+[1, '2', 3, '4'] ➔ [1, 3]
+['one', 'two', 3, 4] ➔ [3, 4]
+
+
+*/
+
+const apla = ['hello', 5, 'world', 10]
+function onlyNumbers(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] !== 'string') {
+      result.push(array[i]);
+    }
+  }
+  return result;
+}
+
+console.log(onlyNumbers(apla));
