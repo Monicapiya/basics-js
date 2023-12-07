@@ -195,3 +195,47 @@ function calAvgAge(people) {
   return sum / femalePersons.length;
 }
 console.log(calAvgAge(totalPeople));
+
+/*
+ Question 4
+Prompt: Create a function that counts the number of elements in an array that are greater than 10. For instance, [3, 11, 20] should return 2.
+
+*/
+
+/* 
+const numbers = [3,11,20];
+
+function totalNum(){
+  let greaterNum = [];
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] > numbers.length) {
+      greaterNum.push(numbers[i]);{
+        greaterNum++;
+      }
+      
+    }
+  }
+   return greaterNum;
+};
+
+
+
+console.log(totalNum(numbers));
+
+*/
+
+const numbers = [3,11,20];
+
+function totalNum(){
+  let greaterNum = [];
+  for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] > numbers.length) {
+        greaterNum++;
+    }
+  }
+   return greaterNum;
+};
+
+
+
+console.log(totalNum(numbers));

@@ -174,3 +174,14 @@ let num = [1, 2, 3, 4, 5];
 
 num.forEach((number) => {console.log(number * 2)});
 
+//  3: Accessing the index of each element
+
+let alphas = ['a', 'b', 'c', 'd'];
+
+// array.forEach(callbackFn(currentValue, index, array){
+  //write the code here
+// });
+
+alphas.forEach((element, index) => {
+  console.log(`Element at ${index} is ${element}`);
+})
