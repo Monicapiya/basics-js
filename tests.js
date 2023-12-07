@@ -264,3 +264,10 @@ function factCal(number) {
   }
 }
 console.log(factCal(5));
+
+
+// Write a JavaScript function to find the smallest number in an array of numbers. For example, [2, 3, 1, 4] should return 1.
+
+const numbers1 = [2,3,1,4];
+const smallestNum = Math.min(...numbers1);
+console.log(smallestNum);

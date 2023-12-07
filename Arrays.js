@@ -97,4 +97,49 @@ const total = `${tip1} , ${tip2}, ${tip3}`
 
 
 console.log(total);
+
+
+/*
+
+Create a function to calculate the factorial of a number using recursion. For instance, the factorial of 5 (denoted as 5!) is 120.
+
+function factCal(number) {
+  if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    return number * factCal(number - 1);
+  }
+}
+console.log(factCal(5));
+
+
+ In the context of the factorial problem, recursion is a programming technique where a function calls itself to solve a smaller subproblem until it reaches a base case. In this case, the base case is when the input number n is equal to 0 or 1.
+
+Here's how the recursive factorial() function works:
+
+When the factorial() function is called with an input number n, it first checks if n is equal to 0 or 1. If it is, the function immediately returns 1 since the factorial of 0 and 1 is 1.
+
+If n is not 0 or 1, the function calculates the factorial by multiplying n with the result of calling the factorial() function recursively with n-1. This recursive call calculates the factorial of a smaller subproblem, which is n-1, and so on.
+
+The recursion continues until the base case is reached, at which point the recursive calls start to unwind and the factorial values are multiplied together to obtain the final result.
+
+For example, let's calculate the factorial of 5 using the factorialRecursive() function:
+
+The initial call to factorial(5) is not a base case, so it goes to step 2.
+
+The function calculates 5 * factorial(4) by making a recursive call with n-1.
+
+Now, the recursive call factorial(4) is not a base case, so it goes to step 2 again.
+
+The function calculates 4 * factorial(3) by making another recursive call with n-1.
+
+This process continues until factorial(1) is reached, which is a base case and returns 1.
+
+The recursion starts to unwind: factorial(1) returns 1, then factorial(2) multiplies it by 2, factorial(3) multiplies it by 3, factorial(4) multiplies it by 4, and finally, factorial(5) multiplies it by 5.
+
+The final result is 5 * 4 * 3 * 2 * 1, which is 120.
+
+Recursive functions can be a powerful technique for solving problems that can be divided into smaller subproblems. However, it's important to ensure that a proper base case is defined to avoid infinite recursion.
+
+*/
  
