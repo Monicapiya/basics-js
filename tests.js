@@ -209,9 +209,7 @@ function totalNum(){
   let greaterNum = [];
   for (let i = 0; i < numbers.length; i++){
     if (numbers[i] > numbers.length) {
-      greaterNum.push(numbers[i]);{
-        greaterNum++;
-      }
+      greaterNum.push(numbers[i]);
       
     }
   }
@@ -239,3 +237,30 @@ function totalNum(){
 
 
 console.log(totalNum(numbers));
+
+//  Write a function that finds the longest string in an array of strings. For example, ['short', 'longer', 'longest'] should return ////'longest'.
+
+const data = ['short', 'longer', 'longest'];
+
+function lengthOfData(array){
+  let longString = '';
+  for (let i = 0; i < array.length; i++){
+    if(array[i].length > longString.length){
+      longString = array[i];
+    }
+  }
+  return longString;
+};
+
+console.log(lengthOfData(data));
+
+//Create a function to calculate the factorial of a number using recursion. For instance, the factorial of 5 (denoted as 5!) is 120.
+
+function factCal(number) {
+  if (number === 0 || number === 1) {
+    return 1;
+  } else {
+    return number * factCal(number - 1);
+  }
+}
+console.log(factCal(5));
