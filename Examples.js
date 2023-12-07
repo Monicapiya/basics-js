@@ -129,3 +129,48 @@ const temperatures2 = [3, -2, -9, -11, 'error', 9, 34, 17, 15, 14, 40, 5];
 const amplitudeNew = calcTempAmplitudeNew();
 
 console.log(amplitudeNew);
+
+//Array.forEach() 👇
+
+/* 
+Syntax 👇
+array.forEach(callbackFn(currentValue, index, array){
+  //write the code here
+});
+
+The forEach() method takes a callback function as an argument. This callback function is executed for each element in the array and has access to three parameters:
+
+currentValue: The current element being processed in the array.
+index (optional): The index of the current element being processed.
+array (optional): The array that forEach() was called upon
+
+*/
+
+//  1: Printing each element of an array
+
+//  1: Printing each element of an array
+
+let fruits = ['Apple', 'Orange', 'Grape'];
+
+// array.forEach(callbackFn(currentValue, index, array){
+  //write the code here
+// });
+
+fruits.forEach((element) =>{
+              console.log(element);
+              });
+
+      //Output 'Apple'
+           //'Orange'
+           //'Grape'
+
+//  2: Modifying each element of an array double
+
+let num = [1, 2, 3, 4, 5];
+
+// array.forEach(callbackFn(currentValue, index, array){
+  //write the code here
+// });
+
+num.forEach((number) => {console.log(number * 2)});
+
