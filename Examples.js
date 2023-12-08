@@ -224,3 +224,84 @@ const printForecast = function(arr) {
 };
 
 printForecast(data1);
+
+
+/*
+
+isPalindromeReverse(), checks if a given string is a palindrome by reversing the string and comparing it to the original string. Here's how it works:
+
+The isPalindromeReverse() function takes a string, str, as input.
+
+Inside the function:
+
+str.split('') splits the string into an array of individual characters.
+Array.reverse() reverses the order of elements in the array.
+Array.join('') concatenates the reversed array back into a string.
+const reverseStr stores the reversed string obtained in the previous step.
+
+The function checks if str is equal to reverseStr using the === equality operator. If they are equal, it means the string is the same when read forwards and backwards, and the function returns true. Otherwise, it returns false.
+
+Here's an example:
+
+function isPalindromeReverse(str) {
+  const reverseStr = str.split('').reverse().join('');
+  return str === reverseStr;
+}
+
+console.log(isPalindromeReverse('radar')); // Output: true
+In this example, the string 'radar' is passed to the isPalindromeReverse() function. The function converts the string to an array ['r', 'a', 'd', 'a', 'r'], reverses it to ['r', 'a', 'd', 'a', 'r'], and then joins it back to obtain the string `'radar
+
+
+'. The function then checks if 'radar'is equal to'radar', which is true. Therefore, the output is true`
+
+
+Method 2: Using Array.every()
+
+function isPalindromeEvery(str) {
+  return str.split('').every((char, index) => char === str[str.length - index - 1]);
+}
+
+console.log(isPalindromeEvery('radar')); // Output: true
+Method 3: Using Two Pointers
+
+function isPalindromePointers(str) {
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+console.log(isPalindromePointers('radar')); // Output: true
+Method 4: Using Recursion
+
+function isPalindromeRecursive(str) {
+  if (str.length <= 1) {
+    return true;
+  }
+  if (str[0] !== str[str.length - 1]) {
+    return false;
+  }
+  const subStr = str.slice(1, str.length - 1);
+  return isPalindromeRecursive(subStr);
+}
+
+console.log(isPalindromeRecursive('radar')); // Output: true
+Method 5: Using Regular Expression and String.replace()
+
+function isPalindromeRegex(str) {
+  const alphanumericStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reverseStr = alphanumericStr.split('').reverse().join('');
+  return alphanumericStr === reverseStr;
+}
+
+console.log(isPalindromeRegex('radar')); // Output: true
+
+
+*/
