@@ -305,3 +305,19 @@ console.log(isPalindromeRegex('radar')); // Output: true
 
 
 */
+
+// Array.reduce()
+
+/*
+  The reduce method accepts two arguments: a callback and an initial value (arr.reduce(callback, initialValue), the callback takes 4 arguments, accumulator, current value, current index, and initial value. In simple words, this method reduces the array to return one value.
+
+  Syntax: 
+array.reduce( function(total, currentValue, currentIndex, arr), 
+initialValue )
+
+*/
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(sum);
