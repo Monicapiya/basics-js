@@ -321,3 +321,26 @@ const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
 console.log(sum);
+
+/*
+  Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+
+Your task is to write a function maskify, which changes all but the last four characters into '#'.
+
+Examples (input --> output):
+
+*/
+
+function maskify(CC) {
+  if(CC.length <= 4) {
+    return CC;
+  }
+  
+  //used slice mthod to extrect all the chars expect ast 4. and replaced with # using regular expression 
+  const maskedChar = CC.slice(0, -4).replace(/./g, '#');
+  const lastFourChars = CC.slice(-4);
+  
+  return maskedChar + lastFourChars;
+}
+
+console.log(maskify('4556364607935616'));
