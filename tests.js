@@ -265,3 +265,44 @@ console.log(isValidWalk(walk1));
 console.log(isValidWalk(walk2));
 console.log(isValidWalk(walk3));
 console.log(isValidWalk(walk4));
+
+/*
+  Write a JavaScript program to display the current day and time in the following format.
+  Today is : Tuesday.
+  Current time is : 10 PM : 30 : 38
+*/
+
+let today = new Date();
+let day = today.getDay();
+let dayList =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+console.log(`Today is: ${dayList[day]}.`);
+
+let hrs = today.getHours();
+let min = today.getMinutes();
+let second = today.getSeconds();
+let prepand = (hrs >= 12) ? " PM " : " AM ";
+
+// Check for special cases when hour is 0
+if (hrs === 0 && prepand === ' PM ') {
+    if (minute === 0 && second === 0) {
+        hrs = 12;
+        prepand = ' Noon';
+    } else {
+        hrs = 12;
+        prepand = ' PM';
+    }
+}
+
+// Check for special cases when hour is 0
+if (hrs === 0 && prepand === ' AM ') {
+    if (minute === 0 && second === 0) {
+        hrs = 12;
+        prepand = ' Midnight';
+    } else {
+        hrs = 12;
+        prepand = ' AM';
+    }
+}
+
+console.log(`Cuurent time is: ${hrs} ${prepand} ${min} Min ${second} Seconds.`);
