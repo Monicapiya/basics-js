@@ -129,4 +129,139 @@ const area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
 
 console.log(area);
 
+// Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).
 
+let  createCounter = function(n) {
+  return function() {
+      return n++;
+  };
+};
+
+const counter = createCounter(10);
+
+counter();
+counter();
+counter();
+counter();
+
+
+//Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.
+
+//toBe(val) accepts another value and returns true if the two values === each other. If they are not equal, it should throw an error "Not Equal".
+//notToBe(val) accepts another value and returns true if the two values !== each other. If they are equal, it should throw an error "Equal".
+
+/*
+ incorrect code: 👇
+
+ let expect = function(val) {
+    //return { }
+      function toBe(valRec) {
+        if(val === valRec) {
+        return ture; 
+      } else {
+        return 'Not Equal';
+    }
+      }
+      
+};
+
+
+*/
+
+
+/* correct code 👇🌟
+  function expect(value) {
+  return {
+    toBe: function (expectedValue) {
+      if (value !== expectedValue) {
+        throw new Error("Not Equal");
+      }
+      return true;
+    },
+    notToBe: function (unexpectedValue) {
+      if (value === unexpectedValue) {
+        throw new Error("Equal");
+      }
+      return true;
+    },
+  };
+}
+
+console.log(expect(7).notToBe(6));
+
+*/
+
+/*
+  Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+
+    The three functions are:
+
+    increment() increases the current value by 1 and then returns it.
+    decrement() reduces the current value by 1 and then returns it.
+    reset() sets the current value to init and then returns it.
+*/
+
+function createCounter(init) {
+  let sol = init;
+
+  return {
+    increment() {
+      return ++sol;
+    },
+    decrement() {
+      return --sol;
+    },
+    reset() {
+      sol = init;
+      return sol;
+    },
+  };
+}
+
+console.log(createCounter(9).decrement());
+console.log(createCounter(9).increment());
+console.log(createCounter(9).reset());
+
+/*
+
+   You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+
+      Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
+
+*/
+
+
+function isValidWalk(walk) {
+  if (walk.length !== 10) {
+    return false;
+  }
+  let x = 0,
+    y = 0;
+  for (const direction of walk) {
+    switch (direction) {
+      case "n":
+        y++;
+        break;
+      case "s":
+        y--;
+        break;
+      case "e":
+        x++;
+        break;
+      case "w":
+        x--;
+        break;
+    }
+  }
+  return x === 0 && y === 0;
+}
+
+const walk1 = ['n', 'e', 's', 'w', 'n', 'e', 's', 'w', 'n', 'e'];
+const walk2 = ['n', 'n', 's', 's', 'e', 'w', 'e', 'w', 'n', 's'];
+const walk3 = ['n', 'e', 's', 'w', 'n', 'e', 's', 'w', 'n', 'n'];
+const walk4 = ['n','s','n','s','n','s','n','s','n','s'];
+
+console.log(isValidWalk(walk1));
+console.log(isValidWalk(walk2));
+console.log(isValidWalk(walk3));
+console.log(isValidWalk(walk4));
