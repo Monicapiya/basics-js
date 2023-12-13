@@ -306,3 +306,46 @@ if (hrs === 0 && prepand === ' AM ') {
 }
 
 console.log(`Cuurent time is: ${hrs} ${prepand} ${min} Min ${second} Seconds.`);
+
+// Write a JavaScript program to get the current date.  
+//Expected Output :
+// mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() + 1;
+let yr = today.getFullYear();
+if(dd < 10) {
+  dd = '0' + dd;
+}
+
+if(mm < 10) {
+  mm = '0' + mm;
+}
+
+let today1 = dd + '-' + mm + '-' + yr;
+
+console.log(today1);
+
+// Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.  
+
+let side1 = 5;
+let side2 = 6;
+let side3 = 7;
+
+let side = (side1+side2+side3)/2
+
+let area = Math.sqrt(side * ((side - side1) * (side - side2) * (side - side3)));
+
+console.log(area);
+
+// Write a JavaScript function that reverses a number. Example x = 32243; Expected Output : 34223
+
+function reverseNum(number) {
+   // Convert the input number to a string
+  number = number + '';
+  // Split the string into an array of characters, reverse the array, and then join the characters back into a string
+   return number.split('').reverse().join("");
+  }
+  
+  console.log(Number(reverseNum(98765)));
