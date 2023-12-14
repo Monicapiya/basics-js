@@ -416,10 +416,10 @@ The below code didnt pass the test 👇
 
 */
 
-function transformArray(arr, fn) {
+function transformArray(array, fn) {
   const transformedArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    transformedArray[i] = fn(arr[i], i);
+  for (let i = 0; i < array.length; i++) {
+    transformedArray[i] = fn(array[i], i);
   }
   return transformedArray;
 }
