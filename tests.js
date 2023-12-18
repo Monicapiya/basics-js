@@ -434,3 +434,5 @@ console.log(transformArray(newArray, multiplyByTwo));
 console.log(transformArray(newArray, addarray));
 console.log(transformArray(newArray, forceArray));
 
+
+
