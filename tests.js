@@ -435,4 +435,38 @@ console.log(transformArray(newArray, addarray));
 console.log(transformArray(newArray, forceArray));
 
 
+// array.push 
 
+const names = ['Van', 'Bea', 'Nam'];
+names.push = 'Pam';
+console.log(names); // output: [ 'Van', 'Bea', 'Nam', push: 'Pam' ]
+
+// array.pop
+
+const names = ['Van', 'Bea', 'Nam'];
+names.pop();
+console.log(names); // output: [ 'Van', 'Bea' ]
+
+// array.shift
+
+const names = ['Van', 'Bea', 'Nam'];
+names.shift();
+console.log(names); // output: [ 'Bea', 'Nam' ]
+
+//array.unshift
+
+const names = ['Van', 'Bea', 'Nam'];
+names.unshift('Pam');
+console.log(names); // output: [ 'Pam', 'Van', 'Bea', 'Nam' ]
+
+//array.slice
+
+const names = ['Van', 'Bea', 'Nam'];
+const newList = names.slice(1);
+console.log(newList); // output: [ 'Bea', 'Nam' ]
+
+//array.splice 
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+const newList = names.splice(0, 3);
+console.log(newList);  // output: [ 'Van', 'Bea', 'Nam' ]
