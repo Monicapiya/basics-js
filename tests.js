@@ -470,3 +470,12 @@ console.log(newList); // output: [ 'Bea', 'Nam' ]
 const names = ['Van', 'Bea', 'Nam', 'Pam'];
 const newList = names.splice(0, 3);
 console.log(newList);  // output: [ 'Van', 'Bea', 'Nam' ]
+
+// Array.Prototype.Concat()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+const newList = ['Mia', 'Bee', 'Cam', 'Zee'];
+
+names.concat(newList); // output: [ 'Van', 'Bea', 'Nam', 'Pam', 'Mia', 'Bee', 'Cam', 'Zee' ]
+
