@@ -479,3 +479,20 @@ const newList = ['Mia', 'Bee', 'Cam', 'Zee'];
 
 names.concat(newList); // output: [ 'Van', 'Bea', 'Nam', 'Pam', 'Mia', 'Bee', 'Cam', 'Zee' ]
 
+// Array.Prototype.IndexOf()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+names.indexOf('Nam'); // output: 2
+
+// Array.Prototype.LastIndexOf()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam','Bea'];
+
+names.lastIndexOf('Bea'); // output: 4
+
+// Array.Prototype.Join()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam','Bea'];
+
+names.join(' '); // output: 'Van Bea Nam Pam Bea'
