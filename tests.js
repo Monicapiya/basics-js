@@ -496,3 +496,38 @@ names.lastIndexOf('Bea'); // output: 4
 const names = ['Van', 'Bea', 'Nam', 'Pam','Bea'];
 
 names.join(' '); // output: 'Van Bea Nam Pam Bea'
+
+// Array.Prototype.Reverse()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+names.reverse(' '); // output: [ 'Pam', 'Nam', 'Bea', 'Van' ]
+
+
+// Array.Prototype.Sort()
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+names.sort(); // output: [ 'Bea', 'Nam', 'Pam', 'Van' ]
+
+// Array.Prototype.ForEach()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+names.forEach(function(name)
+ {
+  console.log(name);  
+});
+
+// output: 'Van'
+// 'Bea'
+// 'Nam'
+// 'Pam'
+
+// Array.Prototype.Map()
+
+const names = ['Van', 'Bea', 'Nam', 'Pam'];
+
+names.map(function(name)
+ {
+  return name + ' Shin';
+}); // output: [ 'Van Shin', 'Bea Shin', 'Nam Shin', 'Pam Shin' ]
