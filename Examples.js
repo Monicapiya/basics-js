@@ -405,3 +405,79 @@ function vowel_count(str1)
   return vcount;
 }
 console.log(vowel_count("The quick brown fox"));
+
+// Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not using recursion.
+
+function test_prime(n)
+{
+
+  if (n===1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(let x = 2; x < n; x++)
+    {
+      if(n % x === 0)
+      {
+        return false;
+      }
+    }
+    return true;  
+  }
+}
+
+console.log(test_prime(37));
+
+// Write a JavaScript function that accepts an argument and returns the type.
+
+function detect_data_type(value)
+{
+  let dtypes = [Function, RegExp, Number, String, Boolean, Object], x, len;
+    
+if (typeof value === "object" || typeof value === "function") 
+    {
+     for (x = 0, len = dtypes.length; x < len; x++) 
+     {
+            if (value instanceof dtypes[x])
+            {
+                return dtypes[x];
+            }
+      }
+    }
+    
+    return typeof value;
+}
+console.log(detect_data_type(12));
+console.log(detect_data_type('w3resource'));
+console.log(detect_data_type(false));
+
+// Write a JavaScript function which returns the n rows by n columns identity matrix.
+
+function matrix(n) {
+
+  let i;
+  let j;
+
+  for (i=0; i < n; i++)
+  {
+    for (j=0; j < n; j++)
+    {
+         if (i === j)
+         {
+          
+           console.log(' 1 ');
+         }
+                
+         else 
+          {
+           console.log(' 0 ');}
+          }
+       console.log('----------');
+     }
+ }
+matrix(4);
