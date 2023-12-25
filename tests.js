@@ -531,3 +531,16 @@ names.map(function(name)
  {
   return name + ' Shin';
 }); // output: [ 'Van Shin', 'Bea Shin', 'Nam Shin', 'Pam Shin' ]
+
+// Array.Prototype.Filter()
+
+const chars = ['morning', 'sun', 'rays', 'heat', 'water'];
+const final = chars.filter((char) => char.length >= 6);
+console.log(final); // output: Array ["morning"]
+
+// Array.Prototype.Reduce()
+
+const nums = [1,2,3,4,5];
+const intialValueOf = 0;
+const total = nums.reduce((totalSums, number) =>totalSums + number, intialValueOf);
+console.log(total); // output: 15
