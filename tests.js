@@ -544,3 +544,37 @@ const nums = [1,2,3,4,5];
 const intialValueOf = 0;
 const total = nums.reduce((totalSums, number) =>totalSums + number, intialValueOf);
 console.log(total); // output: 15
+
+// Array.Prototype.ReduceRight()
+
+const names = ['sun', 'moon', 'darkness', 'light', 'shadow'];
+const comb = names.reduceRight(function(total, name) {
+  return total + name;
+}, "");
+
+console.log(comb); // output: "shadowlightdarknessmoonsun"
+
+// Array.Prototype.Every()
+
+const names = ['pam', 'moon', 'lights', 'decoration'];
+const t0tal = names.every(function(name) {
+  return name.length < 5;
+});
+
+console.log(t0tal); // output: false
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+// output: true
+
+// Array.Prototype.Some()
+
+const names = ['pam', 'moon', 'lights', 'decoration'];
+const t0tal = names.some(function(name) {
+  return name.length < 5;
+});
+console.log(t0tal); 
+// output: true
