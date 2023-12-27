@@ -68,3 +68,46 @@ Output:
 'Dolly McShane | 20 years old'
 
 */
+
+const perfumes = [
+  {
+    id: 1,
+    brand: 'Fruity by Kiwi 50ml',
+    cost: 300,
+  },
+  {
+    id: 2,
+    brand: 'Silly Smelly',
+    cost: 575,
+  },
+  {
+    id: 3,
+    brand: 'Ocean Mist by Ventuo',
+    cost: 1243,
+  },
+  {
+    id: 4,
+    brand: 'Spotlight',
+    cost: 991,
+  },
+  {
+    id: 5,
+    brand: 'Horrendous by Britney',
+    cost: 230,
+  },
+];
+
+const mostExpensive = [...perfumes].sort((a, b) => b.cost - a.cost)[0];
+
+const cheapest = [...perfumes].sort((a, b) => a.cost - b.cost)[0];
+
+console.log(`Most Expensive: ${mostExpensive.brand} at $${mostExpensive.cost}`);
+console.log(`Cheapest: ${cheapest.brand} at $${cheapest.cost}`);
+
+/*
+Output:
+
+'Most Expensive: Ocean Mist by Ventuo at $1243'
+'Cheapest: Horrendous by Britney at $230'
+
+*/
