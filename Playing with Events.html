@@ -1,0 +1,100 @@
+<!--
+  It’s time to play with our little ladybird in a box application. As you saw in the video, we have a div inside of which we have another div with the class ‘ladybird’. Below the box, we have a couple of buttons and our task is to cause the ladybird to successively move in a specific direction based on the key pressed.
+ 
+Each of the movement buttons should move the ladybird by 10 pixels as it modifies the top and left CSS properties. The turn clockwise and turn anti-clockwise buttons on the other hand are meant to modify the transform property, incrementing rotation angles by 90 degree increments or decrements.
+ 
+You can observe the HTML layout by opening and observing the src/index.html file. But the real fun is in the src/js/index.js file. So, let’s get coding.
+ 
+You’ll notice we have all the selectors cached and in place for use. Additionally, there are three variables namely ‘rotation’, ‘xPos’ and ‘yPos’ which will hold the rotation and position values as we increment or decrement. This is the state of the transformation.
+ 
+Our first task is to build functions that will mutate the transform values when the buttons are clicked.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your JavaScript Playground</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Ladybird in a Box</h1>
+      <div class="box">
+        <div class="ladybird"></div>
+      </div>
+      <div class="control-buttons">
+        <button id="left">←</button>
+        <button id="right">→</button>
+        <button id="up">↑</button>
+        <button id="down">↓</button>
+        <button id="turnClockWise">↻</button>
+        <button id="turnAntiClockWise">↺</button>
+        <button id="home">H</button>
+      </div>
+    </div>
+    <script>
+
+const bug = document.querySelector('.ladybird');
+const upBtn = document.querySelector('#up');
+const downBtn = document.querySelector('#down');
+const rightBtn = document.querySelector('#right');
+const leftBtn = document.querySelector('#left');
+const homeBtn = document.querySelector('#home');
+const turnClockWiseBtn = document.querySelector('#turnClockWise');
+const turnAntiClockWiseBtn = document.querySelector('#turnAntiClockWise');
+
+let rotation = 0;
+let xPos = 0;
+let yPos = 0;
+
+
+const setTransform = () => {
+    bug.style.left = `${xPos}px`;
+    bug.style.top = `${yPos}px`;
+  };
+  
+  const stepLeft = () => {
+    xPos > 0 && (xPos -= 10);
+    setTransform();
+  };
+  const stepRight = () => {
+    xPos < 450 && (xPos += 10);
+    setTransform();
+  };
+  const stepUp = () => {
+    yPos > 0 && (yPos -= 10);
+    setTransform();
+  };
+  const stepDown = () => {
+    yPos < 450 && (yPos += 10);
+    setTransform();
+  };
+  
+  const turnClockWise = () => {
+    rotation += 90;
+    bug.style.transform = `rotate(${rotation}deg)`;
+  };
+  const turnAntiClockWise = () => {
+    rotation -= 90;
+    bug.style.transform = `rotate(${rotation}deg)`;
+  };
+  
+  const home = () => {
+    yPos = 0;
+    xPos = 0;
+    setTransform();
+  };
+  
+  upBtn.addEventListener('click', stepUp);
+  downBtn.addEventListener('click', stepDown);
+  rightBtn.addEventListener('click', stepRight);
+  leftBtn.addEventListener('click', stepLeft);
+  homeBtn.addEventListener('click', home);
+  turnClockWiseBtn.addEventListener('click', turnClockWise);
+  turnAntiClockWiseBtn.addEventListener('click', turnAntiClockWise);
+  
+    </script>
+  </body>
+</html>
