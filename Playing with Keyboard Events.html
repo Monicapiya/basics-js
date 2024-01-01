@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your JavaScript Playground</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#main {
+  width: 500px;
+}
+
+#title {
+  position: relative;
+  left: 20px;
+}
+
+.box {
+  position: relative;
+  border: 1px solid;
+  width: 500px;
+  height: 500px;
+  top: 20px;
+  left: 20px;
+}
+
+.ladybird {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transform: rotate(0deg);
+  width: 50px;
+  height: 50px;
+  background-image: url('../img/ladybird.png');
+  background-size: cover;
+  background-position-x: -5px;
+}
+
+.control-buttons {
+  position: relative;
+  top: 40px;
+  left: 45px;
+  width: 450px;
+}
+
+.control-buttons > button {
+  font-size: 30px;
+  width: 50px;
+  margin: 5px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Ladybird in a Box</h1>
+      <div class="box">
+        <div class="ladybird"></div>
+      </div>
+      <div class="control-buttons">
+        <button id="left">←</button>
+        <button id="right">→</button>
+        <button id="up">↑</button>
+        <button id="down">↓</button>
+        <button id="turnClockWise">↻</button>
+        <button id="turnAntiClockWise">↺</button>
+        <button id="home">H</button>
+      </div>
+    </div>
+    <script>
+       const bug = document.querySelector('.ladybird');
+const upBtn = document.querySelector('#up');
+const downBtn = document.querySelector('#down');
+const rightBtn = document.querySelector('#right');
+const leftBtn = document.querySelector('#left');
+const homeBtn = document.querySelector('#home');
+const turnClockWiseBtn = document.querySelector('#turnClockWise');
+const turnAntiClockWiseBtn = document.querySelector('#turnAntiClockWise');
+
+let rotation = 0;
+let xPos = 0;
+let yPos = 0;
+
+const turnClockWise = () => {
+  rotation += 90;
+  bug.style.transform = `rotate(${rotation}deg)`;
+};
+
+const turnAntiClockWise = () => {
+  rotation -= 90;
+  bug.style.transform = `rotate(${rotation}deg)`;
+};
+
+const setTransform = () => {
+  bug.style.left = `${xPos}px`;
+  bug.style.top = `${yPos}px`;
+};
+
+const stepLeft = () => {
+  xPos > 0 && (xPos -= 10);
+  setTransform();
+};
+
+const stepRight = () => {
+  xPos < 450 && (xPos += 10);
+  setTransform();
+};
+
+const stepUp = () => {
+  yPos > 0 && (yPos -= 10);
+  setTransform();
+};
+
+const stepDown = () => {
+  yPos < 450 && (yPos += 10);
+  setTransform();
+};
+
+const home = () => {
+  yPos = 0;
+  xPos = 0;
+  setTransform();
+};
+
+upBtn.addEventListener('click', stepUp);
+downBtn.addEventListener('click', stepDown);
+rightBtn.addEventListener('click', stepRight);
+leftBtn.addEventListener('click', stepLeft);
+homeBtn.addEventListener('click', home);
+turnClockWiseBtn.addEventListener('click', turnClockWise);
+turnAntiClockWiseBtn.addEventListener('click', turnAntiClockWise);
+
+const keyMapping = {
+    ArrowUp: stepUp,
+    ArrowDown: stepDown,
+    ArrowLeft: stepLeft,
+    ArrowRight: stepRight,
+    ']': turnClockWise,
+    '[': turnAntiClockWise,
+    H: home,
+    h: home,
+  };
+  
+  document.addEventListener('keyup', function (event) {
+    const { key } = event;
+    keyMapping[key]();
+  });
+
+    </script>
+  </body>
+</html>
+
+
+<!--
+
+  In the previous exercise, we built our ladybird in a box application and we rigged up buttons on the UI using the ‘click’ mouse event. In this exercise, we’ll wire up keys on the keyboard to the respective functions so that we can play around with the keyboard without needing to click on the UI buttons.
+ 
+When we listen to keyboard events, the event object provides access to a very useful property named ‘key’ which provides the name of the key that was pressed. This can then be used to direct action as necessary.
+ 
+In the video, you saw the use of the switch-case statements. But there is an even faster way, a cleverer trick that can save you a lot of typing and still get the job done. Let’s explore that, in this exercise.
+ 
+-->
