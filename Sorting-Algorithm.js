@@ -15,7 +15,7 @@ function quick_Sort(origArray) {
   let length = origArray.length;
   
   for(let i = 0; i < length; i++){
-  if(origArray[1] <= pivot) {
+  if(origArray[i] <= pivot) {
   left.push(origArray[i]);
   } else{right.push(origArray[i]);
         }
@@ -36,7 +36,7 @@ function quick_Sort(origArray) {
   /*
 Output:
 
-'Original array: -45,-70,10,80,55,99'
-'Sorted array: -70,-45,10,80,55,99'
+'Original array: -45,-70,10,80,55,99,88'
+'Sorted array: -70,-45,10,55,80,88,99'
 
 */
