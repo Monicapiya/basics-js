@@ -47,6 +47,13 @@ const output = numsCount.reverse();
 console.log(output);
 
 
+let output = [];
+for (let  i=10; i > 0; i-=1) {
+  output.push(i);
+}
+
+console.log(output);
+
 /*
 
 Exercise 4: Even Numbers
