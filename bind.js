@@ -20,8 +20,8 @@ const module = {
  
  const unboundGetX = module.getX;
  
- 
  const boundGetX = unboundGetX.bind(module);
+ 
  console.log(boundGetX());
 
  // output: 42
