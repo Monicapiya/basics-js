@@ -47,3 +47,9 @@ class Person {
 
 let person = new Person('Pia', 25);
 console.log(person.name);
+
+
+person.name = "Alice";
+person.age = -30;  // Output: Age cannot be negative.
+console.log(person.name);  // Output: Alice
+console.log(person.age);   // Output: 25

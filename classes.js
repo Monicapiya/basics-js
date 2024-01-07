@@ -16,6 +16,8 @@ const alice = new Person('Alice');
 
 ans:  alice. introduce() is the correct way to call introduce method of class Person.
 
+To make fields in class private, we need to prefix it with #. Eg, #myPrivateField.
+
 */
 
 // Declration 
