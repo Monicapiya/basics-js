@@ -90,11 +90,10 @@ const promise = new Promise((resolve, reject) => {
 */
 
 const withCallback = (cb) => setTimeout(cb, 0);
-withCallback(() => console.log('executed using an async callback'));
+withCallback(() => console.log("executed using an async callback"));
 
-const withPromises = () => Promise.resolve('executed using promises');
+const withPromises = () => Promise.resolve("executed using promises");
 withPromises().then((res) => console.log(res));
-
 
 /*
 'executed using promises'
@@ -102,3 +101,88 @@ Promise { undefined }
 'executed using an async callback'
 
 */
+
+let p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 3 * 100);
+});
+
+console.log(p);
+
+/*
+Output:
+
+Promise {<pending>}
+[[Prototype]]
+: 
+Promise
+[[PromiseState]]
+: 
+"fulfilled"
+[[PromiseResult]]
+: 
+10
+
+*/
+
+let p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 3 * 1000);
+});
+
+console.log(p);
+
+p.then((result) => {
+  console.log(result);
+  return result * 2;
+}).then((result) => {
+  console.log(result);
+  return result * 3;
+});
+
+/*
+Promise { <pending> }
+Promise { <pending> }
+10
+20
+
+*/
+
+// return a new promise in the then() method 👇
+
+let p = new Promise((resolve, reject) => {
+  setTimeout (() => {
+  resolve(10);
+  }, 3 * 100);
+  }
+  );
+  
+  
+  p.then((result) => {
+  console.log(result);
+  return new Promise((resolve, reject) => {
+  setTimeout (() => {
+  resolve(10);
+  }, 3 * 100);
+  }
+  );
+  }) .then((result) => {
+      console.log(result);
+      return new Promise((resolve, reject) => {
+          setTimeout(() => {
+              resolve(result * 3);
+          }, 3 * 1000);
+      });
+  }).then(result => console.log(result));
+  
+/*
+Output:
+Promise { <pending> }
+10
+10
+30
+*/
+
+
