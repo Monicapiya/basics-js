@@ -20,7 +20,7 @@ const p3 = new Promise((resolve, reject) => {
 });
 
 Promise.all([p1, p2, p3]).then((results) => {
-  const total = results.reduce((p, c) => p + c);
+  const total = results.reduce((previousValue, currentValue) => previousValue + currentValue);
   console.log(`Results : ${results}`);
   console.log(`Total: ${total}`);
 });
@@ -36,3 +36,32 @@ Promise { <pending> }
 'Total: 60'
 
 */
+
+
+//  Rejected promises example 👇
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("The 1st promise is resolved");
+    resolve(10);
+  }, 1 * 1000);
+});
+
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("The 2nd promise is rejected");
+    reject('Failed');
+  }, 2 * 1000);
+});
+
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("The 3rd promise is resolved");
+    resolve(30);
+  }, 3 * 1000);
+});
+
+Promise.all([p1, p2, p3])
+
+.then(console.log)
+.catch(console.log);
