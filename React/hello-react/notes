@@ -1,0 +1,26 @@
+Components are the building blocks of a React application and can be developed and maintained individually.
+
+React uses the concept of state which describes the data that drives changes to the user interface.
+
+The process of comparing the newly generated Virtual DOM tree with the previous version is known as ‘Diffing’. It computes optimistic updates which are then applied to the real DOM.
+
+Props or properties allow parent components to pass data to child components easily.
+
+Components are the basic building blocks of a user interface. They’re composable units that can be put together to build UIs and apps.
+
+Components may be reusable, allowing you to repurpose them elsewhere or even share it with other developers/community and by this design, they promote modularity across your application.
+
+React features a unidirectional data flow architecture which means that data flows down like a waterfall from parent to child components using features such as props among other ways.
+
+React’s one-way data flow (also called one-way binding) keeps everything modular and fast.
+
+Event listeners in JSX allow you to capture user events such as mouse clicks, keyboard events and more.
+
+State is used to declaratively describe changes to the UI with data. Whenever data in the state changes, the component re-renders to reflect the change.
+React allows you to create Class and Function components.
+
+Class components offer local state management and lifecycle methods, out of the box.
+
+The logical OR operator allows you to conveniently substitute an alternative value if the first operand evaluates to a falsy value such as an empty string, false, null or undefined. Hence, it will render the value of this.props.text if it is truthy or else will evaluate to “No Notifications”.
+
+The function component accepts props as an argument.
